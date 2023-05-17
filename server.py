@@ -40,11 +40,6 @@ async def treinar(update, context):
     model.save('cifar_classifier.model')
     await update.message.reply_text("Pronto! Agora você pode mandar uma imagem")
 
-        
-async def handle_message(update, context):
-    await update.message.reply_text("Por favor treine o modelo com uma imagem!")
-    
-
 async def handle_photo(update, context):
     file = await context.bot.get_file(update.message.photo[-1].file_id)
     f = BytesIO(await file.download_as_bytearray())
@@ -63,7 +58,6 @@ dp = ApplicationBuilder().token("6183521273:AAGeaXYjP5kbSry5sxp-GuhyzQR4V9jh-p4"
 dp.add_handler(CommandHandler("iniciar", iniciar))
 dp.add_handler(CommandHandler("ajuda", ajuda))
 dp.add_handler(CommandHandler("treinar", treinar))
-dp.add_handler(MessageHandler(filters.TEXT, handle_message))
 dp.add_handler(MessageHandler(filters.PHOTO, handle_photo))
 
 dp.run_polling()
