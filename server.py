@@ -23,7 +23,11 @@ async def handle_photo(update, context):
     traduzidos = []
     for element in labels:
         blob = TextBlob(element)
-        translation = await blob.translate(to='pt')
+        translation = element;
+        try:
+            translation = blob.translate(from_lang='en', to='pt')
+        except:
+            print("error")
         traduzidos.append(str(translation))
         
     await update.message.reply_text(f"Na imagem eu vejo: {', '.join(traduzidos)}")
@@ -45,4 +49,3 @@ dp.add_handler(CommandHandler("ajuda", ajuda))
 dp.add_handler(MessageHandler(filters.PHOTO, handle_photo))
 
 dp.run_polling()
-dp.idle()
