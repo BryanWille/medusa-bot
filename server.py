@@ -3,6 +3,12 @@ from io import BytesIO
 from google.cloud import vision
 from google.oauth2.service_account import Credentials
 from textblob import TextBlob
+import json
+
+async def new_message_handler(update, context):
+    message_content = update['message']['photo'][0].file_id
+    print(update['message'])
+    await handle_photo(update=update, context=context, fileid=message_content)
 
 def analyze_image(content):
     credentials = Credentials.from_service_account_file('credentials.json')
@@ -12,8 +18,8 @@ def analyze_image(content):
     labels = response.label_annotations
     return [label.description for label in labels]
 
-async def handle_photo(update, context):
-    file = await context.bot.get_file(update.message.photo[-1].file_id)
+async def handle_photo(update, context, fileid):
+    file = await context.bot.get_file(fileid)
     image_content = BytesIO(await file.download_as_bytearray())
 
     image_content.seek(0)
@@ -46,6 +52,6 @@ dp = ApplicationBuilder().token("6183521273:AAGeaXYjP5kbSry5sxp-GuhyzQR4V9jh-p4"
 
 dp.add_handler(CommandHandler("iniciar", iniciar))
 dp.add_handler(CommandHandler("ajuda", ajuda))
-dp.add_handler(MessageHandler(filters.PHOTO, handle_photo))
+dp.add_handler(MessageHandler(filters.PHOTO, new_message_handler))
 
 dp.run_polling()
