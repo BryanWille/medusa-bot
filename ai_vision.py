@@ -41,10 +41,12 @@ headers = {
 
 response = requests.post(endpoint, params=params, headers=headers, data=json.dumps(request_data))
 
+text = ""
 # Obtenha os resultados da detecção de rótulos
 if response.status_code == 200:
     labels = response.json()['responses'][0]['labelAnnotations']
+    print
     for label in labels:
-        print(label['description'])
+        text += label['description'] + ", "
 else:
     print('Erro na solicitação:', response.status_code, response.text)
