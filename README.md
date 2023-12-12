@@ -1,7 +1,7 @@
-# Medusa Bot
-O Medusa bot é um projeto feito em C++ utilizando um ESP32-CAM para rotacioanr, tirar fotos, identificar o que está na imagem e traduzir os rótulos atráves do Google Cloud e do Telegram.
+# 🐍🗿 Medusa Bot
+O Medusa bot é um projeto feito em C++ utilizando um ESP32-CAM para rotacionar, tirar fotos, identificar o que está na imagem e traduzir os rótulos atráves do Google Cloud e do Telegram.
 
-## Tecnologias Usadas
+## ⚙️Tecnologias Usadas
 - Arduino IDE
 - ESP32-CAM
 - Servo Motor
@@ -22,12 +22,12 @@ O usuário chama o bot no telegram usando o comando /photo, o bot então vai tir
 5. Enviar a mensagem com os rótulos traduzidos para o grupo do Telegram.
 6. Girar 90°
 
-### Resultados
+### 🚀 Resultados
 ![image](https://github.com/BryanWille/medusa-bot/assets/84272231/5184e40c-2b09-4058-8ba3-a11cd4280e91)
 ![image](https://github.com/BryanWille/medusa-bot/assets/84272231/383ad283-ab3b-4186-80bc-831333eba17c)
 
 
-## Dificuldades 
+## 🧩 Dificuldades 
 - Utilização de API no C++
   
 Tivemos dificuldades com a API em C++ por conta da manipulação dos tipos de dados JSON, que é diferente de outras linguagens como Python e Javascript, onde é mais fácil gerenciar os dados.
@@ -44,7 +44,7 @@ O problema específico ocorre quando o ESP32-CAM estava configurado para captura
   
 Para enviar os dados para API do Google Cloud as imagens precisam estar em base64, por não conseguirmos instalar nenhuma biblioteca em C++ pronta para isso, tivemos que escrever direto no código o conversor.
 
-# Mais informações
+## 📄 Mais informações
 Você também pode acessar a documentação do projeto que fizemos aqui ou os slides de apresentação
 - [Documentação](https://docs.google.com/document/d/1ta7SOIxn7qrAU2eaaRqbqxrBgpvulbQFuM712-nb33I/edit?usp=sharing)
 - [Apresentação](https://www.canva.com/design/DAFjpfIcKoo/DBHV-53hpGSJaDT4wcLbXw/edit?utm_content=DAFjpfIcKoo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
