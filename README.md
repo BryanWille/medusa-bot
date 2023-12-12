@@ -22,7 +22,7 @@ O usuário chama o bot no telegram usando o comando /photo, o bot então vai tir
 5. Enviar a mensagem com os rótulos traduzidos para o grupo do Telegram.
 6. Girar 90°
 
-### 🚀 Resultados
+## 🚀 Resultados
 ![image](https://github.com/BryanWille/medusa-bot/assets/84272231/5184e40c-2b09-4058-8ba3-a11cd4280e91)
 ![image](https://github.com/BryanWille/medusa-bot/assets/84272231/383ad283-ab3b-4186-80bc-831333eba17c)
 
