@@ -2,6 +2,7 @@
 O Medusa bot é um projeto feito em C++ utilizando um ESP32-CAM para rotacionar, tirar fotos, identificar o que está na imagem e traduzir os rótulos atráves do Google Cloud e do Telegram.
 
 ## ⚙️Tecnologias Usadas
+- C++
 - Arduino IDE
 - ESP32-CAM
 - Servo Motor
